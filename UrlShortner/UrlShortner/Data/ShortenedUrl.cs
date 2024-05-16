@@ -1,8 +1,10 @@
-﻿namespace UrlShortner.Data
+﻿using MongoDB.Bson;
+
+namespace UrlShortner.Data
 {
     public class ShortenedUrl
     {
-        public Guid Id { get; set; }
+        public ObjectId Id { get; set; }
         public string LongUrl { get; set; } = string.Empty;
         public string ShortUrl { get; set; } = string.Empty;
         public string Code { get; set; } = string.Empty;
