@@ -1,4 +1,7 @@
-﻿namespace UrlShortner.Extensions
+﻿using Microsoft.EntityFrameworkCore;
+using UrlShortner.Data;
+
+namespace UrlShortner.Extensions
 {
     public static class Configuration
     {
@@ -7,6 +10,12 @@
             builder.Services
                 .AddEndpointsApiExplorer()
                 .AddSwaggerGen();
+
+            builder.Services
+                .AddDbContext<MongoUrlContext>(options =>
+                {
+                    options.UseMongoDB("connection-string", "database-name");
+                });
         }
 
         public static void RegisterMiddlewares(this WebApplication app)
