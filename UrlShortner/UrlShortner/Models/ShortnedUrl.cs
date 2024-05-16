@@ -2,7 +2,7 @@
 
 namespace UrlShortner.Data
 {
-    public class ShortenedUrl
+    public class ShortnedUrl
     {
         public ObjectId Id { get; set; }
         public string LongUrl { get; set; } = string.Empty;
